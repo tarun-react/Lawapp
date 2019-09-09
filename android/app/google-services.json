@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "285325947318",
+    "firebase_url": "https://lawapp-b74ff.firebaseio.com",
+    "project_id": "lawapp-b74ff",
+    "storage_bucket": "lawapp-b74ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285325947318:android:bfb1d022aee9131b051117",
+        "android_client_info": {
+          "package_name": "com.lawapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285325947318-13nk2g7nj6lnsbh6bpq7l5v37angl9uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzcr5fusBtjUIIptOzLO8I4OAjLLFcA9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285325947318-13nk2g7nj6lnsbh6bpq7l5v37angl9uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

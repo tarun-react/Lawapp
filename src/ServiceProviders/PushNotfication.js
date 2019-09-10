@@ -30,14 +30,15 @@ export default class PushNotification extends Component {
         const { title, body } = notification;
         const localNotificationSound = new firebase.notifications.Notification({
           sound: "default",
-          show_in_foreground: true
+          show_in_foreground: true,
+          
         })
 
           // .setNotificationId(notification.notificationId)
           .setTitle(notification.title)
           .setBody(notification.body)
           .android.setChannelId("fcm_default_channel") // e.g. the id you chose above
-          // .android.setSmallIcon('ic_notification') // create this icon in Android Studio
+          .android.setSmallIcon('ic_notification') // create this icon in Android Studio
           .android.setColor(Colors.accent)
           .android.setPriority(firebase.notifications.Android.Priority.High);
 
@@ -79,6 +80,7 @@ export default class PushNotification extends Component {
         await AsyncStorage.setItem("fcmToken", fcmToken);
       }
     }
+    alert(fcmToken)
     console.log(fcmToken);
   }
 

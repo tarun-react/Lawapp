@@ -2,11 +2,13 @@
 
 
 export const Colors  = {
+
+  
   headerNavigational:['#27a4ff','#74c3fc'],
   headerMain:['#74c3fc','#27a4ff'],
   pageBackground:'#fff',
   primary: '#000',
-  accent:'#27a4ff',
+  accent:'#000000',
   inputs_placeholders:'#6A6A6A',
   inputBorder:'#86939e',
   white: '#FFF',

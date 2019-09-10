@@ -17,6 +17,7 @@
     "react-native-gesture-handler": "^1.4.1",
     "react-native-simple-store": "^2.0.1",
     "react-native-snackbar": "^2.0.2",
+    "react-native-splash-screen": "^3.2.0",
     "react-native-webview": "^7.0.4",
     "react-navigation": "^4.0.0",
     "react-navigation-stack": "^1.5.3"

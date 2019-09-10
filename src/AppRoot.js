@@ -8,7 +8,7 @@ import {
 } from "react-navigation";
   
   import {createStackNavigator} from 'react-navigation-stack'
-
+import SplashScreen from 'react-native-splash-screen'
 import WebviewContainer from 'Screens/WebviewContainer'
 
 let transitionSpeed = 650;
@@ -33,9 +33,15 @@ const TopLevelNavigator = createSwitchNavigator(
 const AppContainer = createAppContainer(TopLevelNavigator);
 
 export default class AppRoot extends Component {
+
+  componentDidMount(){
+    SplashScreen.hide()
+  }
   render() {
     return (
         <View style={styles.container}>
+      <StatusBar backgroundColor={'#fff'} barStyle="dark-content" />
+
           <AppContainer />
         </View>
     );

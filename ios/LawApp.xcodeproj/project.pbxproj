@@ -18,6 +18,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* LawAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* LawAppTests.m */; };
 		2DF09870EF36BF2F07B24129 /* libPods-LawApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE41C615122ACCAB8189738F /* libPods-LawApp-tvOSTests.a */; };
+		A1D5DDB523276BB8005DA542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D5DDB423276BB8005DA542 /* Assets.xcassets */; };
 		A1EBB8EA232684360063DF71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1EBB8E9232684360063DF71 /* GoogleService-Info.plist */; };
 		ADE2D4C68A434AFE36CA5AFD /* libPods-LawApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 500455824E9E43DADB7937E7 /* libPods-LawApp.a */; };
 		DED1D8F837AA543A8CA218D3 /* libPods-LawAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D80A148567C1F6D990AF8A7B /* libPods-LawAppTests.a */; };
@@ -61,6 +62,8 @@
 		500455824E9E43DADB7937E7 /* libPods-LawApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LawApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B208B942E3D7BE347314DD /* libPods-LawApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LawApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CBFF030A758FF0B48C7AD5 /* Pods-LawApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LawApp.debug.xcconfig"; path = "Target Support Files/Pods-LawApp/Pods-LawApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A1D5DDB423276BB8005DA542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		A1D5DDB623277096005DA542 /* LawApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = LawApp.entitlements; path = LawApp/LawApp.entitlements; sourceTree = "<group>"; };
 		A1EBB8E9232684360063DF71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B167E695ECF9BBE9AA30EA39 /* Pods-LawApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LawApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-LawApp-tvOSTests/Pods-LawApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3456349C2D3AC87AA8FEC19 /* Pods-LawAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LawAppTests.release.xcconfig"; path = "Target Support Files/Pods-LawAppTests/Pods-LawAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,10 +130,12 @@
 		13B07FAE1A68108700A75B9A /* LawApp */ = {
 			isa = PBXGroup;
 			children = (
+				A1D5DDB623277096005DA542 /* LawApp.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				A1D5DDB423276BB8005DA542 /* Assets.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				A1EBB8E9232684360063DF71 /* GoogleService-Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -197,7 +202,6 @@
 				F36DED92766EC5BD6581A1C4 /* Pods-LawAppTests.debug.xcconfig */,
 				B3456349C2D3AC87AA8FEC19 /* Pods-LawAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -295,6 +299,17 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 956TJ59SMX;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -342,6 +357,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				A1D5DDB523276BB8005DA542 /* Assets.xcassets in Resources */,
 				A1EBB8EA232684360063DF71 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,8 +647,10 @@
 			baseConfigurationReference = 78CBFF030A758FF0B48C7AD5 /* Pods-LawApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LawApp/LawApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 956TJ59SMX;
 				INFOPLIST_FILE = LawApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -651,7 +669,9 @@
 			baseConfigurationReference = 1A76787B9CBEE4D200D2B4D3 /* Pods-LawApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LawApp/LawApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 956TJ59SMX;
 				INFOPLIST_FILE = LawApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

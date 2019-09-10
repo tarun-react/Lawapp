@@ -32,6 +32,10 @@ target 'LawApp' do
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
   pod 'RNSnackbar', :path => '../node_modules/react-native-snackbar'
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
   target 'LawAppTests' do
     inherit! :search_paths

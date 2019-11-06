@@ -2,11 +2,23 @@ import React, { Component } from "react";
 import { AsyncStorage } from "react-native";
 import { Colors } from "UIProps/Colors";
 import firebase from "react-native-firebase";
+import { withNavigation } from "react-navigation";
 
-export default class PushNotification extends Component {
+ class PushNotification extends Component {
   async componentDidMount() {
     this.checkPermission();
     this.createNotificationListeners(); //add this line
+
+    this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
+      this.props.navigation.navigate('home')
+      // Get the action triggered by the notification being opened
+      
+      const action = notificationOpen.action;
+
+      // Get information about the notification that was opened
+      const notification = notificationOpen.notification;
+  });
+
   }
 
   componentWillUnmount() {
@@ -27,7 +39,7 @@ export default class PushNotification extends Component {
     this.notificationListener = firebase
       .notifications()
       .onNotification(notification => {
-        const { title, body } = notification;
+        const { title, body,click_action } = notification;
         const localNotificationSound = new firebase.notifications.Notification({
           sound: "default",
           show_in_foreground: true,
@@ -51,25 +63,6 @@ export default class PushNotification extends Component {
       firebase.notifications.Android.Importance.High
     ).setDescription("None");
     firebase.notifications().android.createChannel(channel);
-
-    /*
-     * If your app is in background, you can listen for when a notification is clicked / tapped / opened as follows:
-     * */
-    this.notificationOpenedListener = firebase
-      .notifications()
-      .onNotificationOpened(notificationOpen => {
-        const { title, body } = notificationOpen.notification;
-      });
-
-    /*
-     * If your app is closed, you can check if it was opened by a notification being clicked / tapped / opened as follows:
-     * */
-    const notificationOpen = await firebase
-      .notifications()
-      .getInitialNotification();
-    if (notificationOpen) {
-      const { title, body } = notificationOpen.notification;
-    }
   }
 
   async getToken() {
@@ -80,7 +73,7 @@ export default class PushNotification extends Component {
         await AsyncStorage.setItem("fcmToken", fcmToken);
       }
     }
-    alert(fcmToken)
+    this.props.tokenSetter(fcmToken)
     console.log(fcmToken);
   }
 
@@ -95,3 +88,5 @@ export default class PushNotification extends Component {
     return null;
   }
 }
+
+export default withNavigation(PushNotification)

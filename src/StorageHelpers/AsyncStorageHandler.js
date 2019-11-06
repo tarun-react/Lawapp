@@ -1,3 +1,4 @@
+import { ActivityIndicatorIOS } from 'react-native'
 import store from "react-native-simple-store";
 
 const AsyncStorageHandler = {
@@ -15,6 +16,7 @@ const AsyncStorageHandler = {
       store.get(key).then(res => {
         callback(res);
       });
+      
     } catch (error) {
       alert(error);
     }

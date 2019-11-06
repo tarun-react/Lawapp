@@ -196,9 +196,9 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation "com.google.firebase:firebase-core:17.0.1"
-implementation "com.google.firebase:firebase-messaging:19.0.1"
- implementation 'com.google.android.gms:play-services-gcm:16.0.0'
-       implementation "com.google.android.gms:play-services-base:16.1.0"
+    implementation "com.google.firebase:firebase-messaging:19.0.1"
+    implementation 'com.google.android.gms:play-services-gcm:16.0.0'
+    implementation "com.google.android.gms:play-services-base:16.1.0"
     
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";

@@ -12,14 +12,10 @@ import { withNavigation } from "react-navigation";
     this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
       this.props.navigation.navigate('home')
       // Get the action triggered by the notification being opened
-      
       const action = notificationOpen.action;
-
-      // Get information about the notification that was opened
       const notification = notificationOpen.notification;
   });
-
-  }
+}
 
   componentWillUnmount() {
     this.notificationListener;
@@ -43,7 +39,6 @@ import { withNavigation } from "react-navigation";
         const localNotificationSound = new firebase.notifications.Notification({
           sound: "default",
           show_in_foreground: true,
-          
         })
 
           // .setNotificationId(notification.notificationId)

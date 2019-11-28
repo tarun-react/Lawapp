@@ -1,19 +1,16 @@
 import React, {Component} from 'react';
 import {
-  Text,
-  View,
   ActivityIndicator,
-  ScrollView,
-  Animated,
+  Platform,
+  Text
 } from 'react-native';
-import Container from 'AppLevelComponents/UI/Container';
 import {WebView} from 'react-native-webview';
 import PushNotification from 'ServiceProviders/PushNotfication';
 import BackHandlerSingleton from 'ServiceProviders/BackHandlerSingleton';
 import HelperMethods from 'Helpers/Methods'
-
-let homePage = 'https://api.lawapp.sg/'
-let dashboard = 'https://api.lawapp.sg/dashboard/'
+import Container from 'AppLevelComponents/UI/Container'
+let homePage = 'https://lawapp.sg/'
+let dashboard = 'https://lawapp.sg/dashboard/'
 let currentUrl = ''
 class WebviewContainer extends Component {
   constructor(props) {
@@ -31,30 +28,26 @@ class WebviewContainer extends Component {
   _onNavigationStateChange  (webViewState)  {
     let {url} = webViewState
     currentUrl = url
-    
   }
 
   renderWebView() {
-    if (this.state.isLoading) {
-      return <ActivityIndicator size="large" color="#000" />;
-    } else {
       return (
+        <Container>
         <WebView
         ref={webview => this.webview = webview }
           startInLoadingState
           onNavigationStateChange={(state)=>this._onNavigationStateChange(state)}
-          source={{uri: `${homePage}?diviceId=${this.state.token} `}}
+          source={{uri: `${homePage}?diviceId=${this.state.token}&divice_type=${Platform.OS}`}}
         />
+        </Container>
       );
-    }
+    
   }
 
   onBackPress = () => {
-    
-    if(currentUrl == `${homePage}?diviceId=${this.state.token}` || currentUrl == dashboard){
+    if(currentUrl == `${homePage}?diviceId=${this.state.token}&divice_type=${Platform.OS}` || currentUrl == dashboard){
       HelperMethods.appExitPrompter()
     } else {
-
       this.webview.goBack()
     }
   }

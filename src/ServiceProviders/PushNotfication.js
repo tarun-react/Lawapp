@@ -61,6 +61,7 @@ import { withNavigation } from "react-navigation";
   }
 
   async getToken() {
+    
     let fcmToken = await AsyncStorage.getItem("fcmToken");
     if (!fcmToken) {
       fcmToken = await firebase.messaging().getToken();
@@ -73,9 +74,12 @@ import { withNavigation } from "react-navigation";
   }
 
   async requestPermission() {
+    // const enabled = await firebase.messaging().hasPermission();
+    // alert(enabled)
     try {
-      await firebase.messaging().requestPermission();
-      this.getToken();
+      firebase.messaging().requestPermission().then(()=>{
+        this.getToken();
+      })
     } catch (error) {}
   }
 
